@@ -17,7 +17,7 @@ console.log("link : ",link)
         {/* <Text>{link}</Text> */}
         
         <WebView
-          source={{uri: 'wwww.google.com'}}
+          source={{uri: link}}
           androidHardwareAccelerationDisabled={true}
           scalesPageToFit={true}
           showsHorizontalScrollIndicator={false}

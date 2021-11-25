@@ -41,7 +41,8 @@ const Login = ({navigation}) => {
   const [showLoading, setShowLoading] = useState(false);
   const [isShow, setShow] = useState(false);
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center', paddingHorizontal: 30}}>
+    <SafeAreaView
+      style={{flex: 1, alignItems: 'center', paddingHorizontal: 30}}>
       <AlertModal isOpen={isShow} setClose={setShow} />
       <Modal disabled visible={showLoading} />
       <Image
@@ -49,8 +50,10 @@ const Login = ({navigation}) => {
         resizeMode="contain"
         style={{width: width - 80, height: 300}}
       />
-      <Button color={Colors.amber} title="Login" type  onPress={()=>{}}/>
-      <View style={{marginTop: 20, justifyContent: 'center',opacity:.5}}>
+    
+        <Button color={Colors.amber} title="Login" type onPress={() => {}} semi/>
+ 
+      <View style={{marginTop: 20, justifyContent: 'center', opacity: 0.5}}>
         <Text>
           Don't have an account?{' '}
           <Text style={{color: Colors.amber, paddingTop: 10}}>Sign Up</Text>
@@ -65,15 +68,23 @@ const Login = ({navigation}) => {
           alignItems: 'center',
           paddingHorizontal: 30,
         }}>
-        <Button color={Colors.facebook} title="Login via Facebook" onPress={()=>{}}/>
-
-        <Button color={Colors.danger} title="Login via Google" onPress={()=>{}}/>
+        <Button
+          color={Colors.facebook}
+          title="Login via Facebook"
+          onPress={() => {}}
+        />
+        <Button
+          color={Colors.danger}
+          title="Login via Google"
+          onPress={() => {}}
+        />
         <TouchableOpacity
           style={{marginTop: 20}}
           hitSlop={{top: 10, left: 10, right: 10}}
           onPress={onPressContinueAsGuest}>
-          <Text style={{color:Colors.coal}}>Continue as guest</Text>
+          <Text style={{color: Colors.coal}}>Continue as guest</Text>
         </TouchableOpacity>
+        
       </View>
     </SafeAreaView>
   );

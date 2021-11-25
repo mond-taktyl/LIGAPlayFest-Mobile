@@ -9,7 +9,7 @@ const Splash = ({navigation, route}) => {
     // if (route.name === 'Splash') {
     setTimeout(() => {
         navigation.navigate('Login');
-    }, 5000);
+    }, 3000);
     // }
   }, [navigation]);
   return (

@@ -1,22 +1,24 @@
 import React from 'react';
 
 import {View, Text, Pressable} from 'react-native';
-import { Colors } from '../themes';
+import {Colors} from '../themes';
 
-const Button = ({color, title, type, onPress}) => {
+const Button = ({color, title, type, onPress, semi}) => {
   return (
     <View
-      style={{
-        height: 80,
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      style={[
+        {
+          height: 80,
+          width: semi ? '90%':'100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+      ]}>
       <Pressable
         onPress={onPress}
         style={({pressed}) => [
           {
-            opacity:.5,
+            opacity: 0.5,
             width: pressed ? '93%' : '95%',
             height: pressed ? (type ? 60 : 50) : type ? 62 : 52,
             borderRadius: 18,

@@ -20,8 +20,14 @@ const Card = ({type, onPress, details,image}) => {
             height: pressed ? (type ? 142 : 78) : type ? 145 : 80,
             backgroundColor: 'white',
             borderRadius: 18,
-            elevation: 2,
-            flexDirection: type ? 'column' : 'row',
+         
+            
+            flexDirection: type ? 'column' : 'row',  
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 1 },
+            shadowOpacity: 0.5,
+            shadowRadius: 2,
+             elevation: 2,
           },
         ]}
         onPress={onPress}>
