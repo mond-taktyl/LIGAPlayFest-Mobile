@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 
-import {ScrollView,Alert,SafeAreaView} from 'react-native';
+import {ScrollView, Alert, SafeAreaView, BackHandler} from 'react-native';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import AlertModal from '../components/modals/AlertModal';
@@ -47,8 +47,21 @@ const Notification = ({navigation}) => {
     );
   };
   // const [isShow, setShow] = useState(false);
+  const checkBackHandler = () => {
+    navigation.goBack()
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', checkBackHandler);
+
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', checkBackHandler);
+    };
+  }, [checkBackHandler]);
+
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       {/* <AlertModal isOpen={isShow} setClose={setShow} /> */}
 
       <Header

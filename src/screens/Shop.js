@@ -1,5 +1,11 @@
-import React, {useState} from 'react';
-import {useWindowDimensions, ScrollView, Alert,SafeAreaView} from 'react-native';
+import React, {useState,useEffect} from 'react';
+import {
+  useWindowDimensions,
+  ScrollView,
+  Alert,
+  SafeAreaView,
+  BackHandler,
+} from 'react-native';
 import {TabView, TabBar} from 'react-native-tab-view';
 
 import Header from '../components/Header';
@@ -103,7 +109,7 @@ const EnergyTab = ({navigation}) => {
   // const [isShow, setShow] = useState(false);
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       {/* <AlertModal isOpen={isShow} setClose={setShow} /> */}
 
       <ScrollView
@@ -138,8 +144,20 @@ const Shop = ({navigation}) => {
     {key: 'third', title: 'Energy'},
   ]);
 
+  const checkBackHandler = () => {
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', checkBackHandler);
+
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', checkBackHandler);
+    };
+  }, [checkBackHandler]);
+
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       <Header main badges={{coins: 1, energy: 5}} navigation={navigation} />
       <TabView
         navigationState={{index, routes}}

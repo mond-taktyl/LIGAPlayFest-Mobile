@@ -1,6 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
-import {View, Text, Alert, TouchableOpacity, Image,SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  Alert,
+  TouchableOpacity,
+  Image,
+  SafeAreaView,
+  BackHandler,
+} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Button from '../components/Button';
 
@@ -24,8 +32,20 @@ const Profile = ({navigation}) => {
       {cancelable: false},
     );
   };
+  const checkBackHandler = () => {
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', checkBackHandler);
+
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', checkBackHandler);
+    };
+  }, [checkBackHandler]);
+
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       {/* <AlertModal isOpen={isShow} setClose={setShow} /> */}
 
       <Header navigation={navigation} goBack name="Profile" />
@@ -59,7 +79,12 @@ const Profile = ({navigation}) => {
               Mond Del Rosario
             </Text>
             <TouchableOpacity
-              style={{backgroundColor: Colors.frost, padding: 15, borderRadius: 20,marginVertical:10}}
+              style={{
+                backgroundColor: Colors.frost,
+                padding: 15,
+                borderRadius: 20,
+                marginVertical: 10,
+              }}
               onPress={() => showComingSoon()}>
               <Text style={{fontWeight: 'bold'}}>92AD2H2992N2LL101029</Text>
             </TouchableOpacity>

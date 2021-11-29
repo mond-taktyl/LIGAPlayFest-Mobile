@@ -6,11 +6,10 @@ import SafeAreaView from 'react-native-safe-area-view';
 const {width} = Dimensions.get('screen');
 const Splash = ({navigation, route}) => {
   useEffect(() => {
-    // if (route.name === 'Splash') {
     setTimeout(() => {
         navigation.navigate('Login');
     }, 3000);
-    // }
+
   }, [navigation]);
   return (
     <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
