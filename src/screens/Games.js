@@ -34,7 +34,7 @@ const Games = ({navigation}) => {
       },
     },
     {
-      link: 'https://files.taktylstudios.com/projects/ff/trivia/0.0.4/',
+      link: 'https://files.taktylstudios.com/projects/ff/trivia/0.0.5/',
       image: require('../assets/banners/trivia-icon.png'),
       details: {
         title: 'READY,SET,SAGOT',

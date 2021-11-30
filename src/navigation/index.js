@@ -91,11 +91,15 @@ const Navigation = () => {
     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
   };
   const webViewOptions = {
+    animationEnabled: true,
+    gestureDirection: 'vertical',
     headerBackTitleVisible: false,
     cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
   };
 
   const profileOptions = {
+    animationEnabled: true,
+    gestureDirection: 'vertical',
     headerBackTitleVisible: false,
     cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
   };
@@ -106,7 +110,7 @@ const Navigation = () => {
       <StatusBar
         animated
         backgroundColor={Colors.facebook}
-        barStyle={'dark-content'}
+        barStyle={'light-content'}
       />
       <Stack.Navigator
         screenOptions={{

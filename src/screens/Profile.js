@@ -33,6 +33,7 @@ const Profile = ({navigation}) => {
     );
   };
   const checkBackHandler = () => {
+    navigation.goBack()
     return true;
   };
 

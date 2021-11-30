@@ -92,7 +92,7 @@ const Header = ({main, navigation, goBack, badges, webView, name}) => {
         {goBack && (
           <TouchableOpacity
             style={{position: 'absolute', left: 15, top: 15}}
-            hitSlop={{left: 15, top: 15, right: 15, bottom: 15}}
+            hitSlop={{left: 15, top: 15, right: 20, bottom: 15}}
             onPress={() => navigation.goBack()}>
             <Ionicons name="chevron-back-outline" size={25} color="#fff" />
           </TouchableOpacity>
